@@ -15,6 +15,7 @@ export interface stlviewerContainerProps {
     volume?: EditableValue<string>;
     width: number;
     height: number;
+    color: string;
     onClickAction?: ActionValue;
 }
 
@@ -27,5 +28,6 @@ export interface stlviewerPreviewProps {
     volume: string;
     width: number | null;
     height: number | null;
+    color: string;
     onClickAction: {} | null;
 }

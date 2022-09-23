@@ -3,9 +3,12 @@ import { stlviewerContainerProps } from "../typings/STLViewerProps";
 import { SpinnerDotted } from "spinners-react";
 import "./STLViewer.scss";
 import { StlViewer } from "../stl-viewer-react/dist";
+import uuid from 'react-uuid';
+
 function STLViewer(props: stlviewerContainerProps) {
     const [loading, setLoading] = useState(true);
     const [volume, setVolume] = useState(0);
+    const stlid = uuid();
     useEffect(() => {
         if (props.file?.status !== "loading") {
             const root = document.documentElement;
@@ -14,7 +17,7 @@ function STLViewer(props: stlviewerContainerProps) {
             props.volume?.setValue(volume.toFixed(2).toString());
             setLoading(false);
         }
-    }, [props.file, props.height, props.width]);
+    }, [stlid, props.file, props.height, props.width]);
 
     if (loading) {
         return (
@@ -26,16 +29,15 @@ function STLViewer(props: stlviewerContainerProps) {
     const dataSource = props.file?.value;
     const height = props.height || 50;
     const width = props.width || 50;
+    const color = props.color;
+
     // const test = props.onClickAction;
     return (
-        <div>
-            <StlViewer width={width} height={height} file={dataSource} volume={setVolume}></StlViewer>
-            <div className="volumeWrapperDiv">
-                <div className="volumeDiv">
-                    {`Volume: ${volume.toFixed(2)}`}mm<sup>3</sup>
-                </div>
+
+            <div >        <canvas id="canvas" className="stlcanvas">        </canvas>
+                <StlViewer stlid={stlid} width={width} height={height} objectColor={color} file={dataSource} volume={setVolume}></StlViewer>
             </div>
-        </div>
+
     );
     // <STLViewerWidget dataSource={dataSource} height={Number(height)} width={Number(width)} onChange={onChange} />
     // );

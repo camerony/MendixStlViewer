@@ -43,6 +43,7 @@
     "react-stl-file-viewer": "0.0.5",
     "react-stl-viewer": "^2.0.3",
     "react-three-fiber": "^6.0.13",
+    "react-uuid": "^1.0.3",
     "spinners-react": "^1.0.6",
     "stl-viewer": "^0.12.0",
     "styled-components": "^5.3.3",

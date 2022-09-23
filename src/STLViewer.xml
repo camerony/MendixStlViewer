@@ -35,6 +35,10 @@
                 <caption>Height</caption>
                 <description>Height of Viewer</description>
             </property>
+            <property key="color" type="string" defaultValue="#105689">
+                <caption>Color</caption>
+                <description>Color for Model</description>
+            </property>
         </propertyGroup>
         <propertyGroup caption="Events">
             <property key="onClickAction" type="action" required="false">
