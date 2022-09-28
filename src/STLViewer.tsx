@@ -7,14 +7,12 @@ import uuid from 'react-uuid';
 
 function STLViewer(props: stlviewerContainerProps) {
     const [loading, setLoading] = useState(true);
-    const [volume, setVolume] = useState(0);
     const stlid = uuid();
     useEffect(() => {
         if (props.file?.status !== "loading") {
             const root = document.documentElement;
             root?.style.setProperty("--height", props.height ? props.height.toString() + "px" : "750px");
             root?.style.setProperty("--width", props.width ? props.width.toString() + "px" : "750px");
-            props.volume?.setValue(volume.toFixed(2).toString());
             setLoading(false);
         }
     }, [stlid, props.file, props.height, props.width]);
@@ -33,11 +31,10 @@ function STLViewer(props: stlviewerContainerProps) {
 
     // const test = props.onClickAction;
     return (
-
-            <div >        <canvas id="canvas" className="stlcanvas">        </canvas>
-                <StlViewer stlid={stlid} width={width} height={height} objectColor={color} file={dataSource} volume={setVolume}></StlViewer>
+            <div >        
+                {/* <canvas id="canvas" className="stlcanvas">        </canvas> */}
+                <StlViewer stlid={stlid} width={width} height={height} objectColor={color} file={dataSource}></StlViewer>
             </div>
-
     );
     // <STLViewerWidget dataSource={dataSource} height={Number(height)} width={Number(width)} onChange={onChange} />
     // );

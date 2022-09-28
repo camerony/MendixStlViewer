@@ -6,9 +6,8 @@ let scene;
 let renderer;
 let controls;
 let id = null;
-let canvas;
 
-export default function Stl(stlid, width, height, file, objectColor, primaryColor,volume) {
+export default function Stl(stlid, width, height, file, objectColor, primaryColor) {
     let rotateModel = true;
     // let showGrid = false;
 
@@ -22,13 +21,10 @@ export default function Stl(stlid, width, height, file, objectColor, primaryColo
     camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     camera.position.set(200, 100, 200);
 
-
-    canvas = document.getElementById("canvas");
     renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true,
-        preserveDrawingBuffer: true,
-        canvas
+        preserveDrawingBuffer: true
     });
 
     renderer.setSize(width, height);

@@ -4,7 +4,7 @@
  * @author Mendix UI Content Team
  */
 import { CSSProperties } from "react";
-import { ActionValue, DynamicValue, EditableValue, FileValue } from "mendix";
+import { ActionValue, DynamicValue, FileValue } from "mendix";
 
 export interface stlviewerContainerProps {
     name: string;
@@ -12,7 +12,6 @@ export interface stlviewerContainerProps {
     style?: CSSProperties;
     tabIndex?: number;
     file?: DynamicValue<FileValue>;
-    volume?: EditableValue<string>;
     width: number;
     height: number;
     color: string;
@@ -25,7 +24,6 @@ export interface stlviewerPreviewProps {
     styleObject?: CSSProperties;
     readOnly: boolean;
     file: string;
-    volume: string;
     width: number | null;
     height: number | null;
     color: string;

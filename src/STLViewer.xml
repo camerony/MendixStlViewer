@@ -18,13 +18,6 @@
                 <caption>File</caption>
                 <description>Modelfile</description>
             </property>
-             <property key="volume" type="attribute" required="false">
-                <caption>volume of model </caption>
-                <description>will be set by the viewer to this variable</description>
-                <attributeTypes>
-                    <attributeType name="String"/>
-                </attributeTypes>
-            </property>
         </propertyGroup>
         <propertyGroup caption="Styling">
             <property key="width" type="integer" defaultValue="500">

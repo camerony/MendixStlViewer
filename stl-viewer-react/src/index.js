@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Stl from "./STLArrows";
 
-export const StlViewer = ({ stlid, width, height, file, objectColor, primaryColor, volume }) => {
+export const StlViewer = ({ stlid, width, height, file, objectColor, primaryColor }) => {
     useEffect(() => {
         Stl(
             stlid,
@@ -9,25 +9,9 @@ export const StlViewer = ({ stlid, width, height, file, objectColor, primaryColo
             height,
             file,
             objectColor ? objectColor : "#000000",//"#105689",
-            primaryColor ? primaryColor : "#1e90ff",
-            volume
+            primaryColor ? primaryColor : "#1e90ff"
         );
     }, [file]);
-    // const buttonStyle = {
-    //     backgroundColor: "DodgerBlue",
-    //     border: 0,
-    //     color: "white",
-    //     padding: "8px 12px",
-    //     fontSize: "12px",
-    //     margin: "5px"
-    // };
-    // const buttonGridStyle = {
-    //     textAlign: "center",
-    //     display: "inline-block",
-    //     position: "absolute",
-    //     right: "2vh",
-    //     bottom: "1vh"
-    // };
     const errorDivStyle = {
         display: "none",
         background: "#872317",
@@ -51,14 +35,6 @@ export const StlViewer = ({ stlid, width, height, file, objectColor, primaryColo
                 <div style={errorDivStyle} id={"errorView"+ stlid}>
                     Could not load Model!
                 </div>
-                {/* <div style={buttonGridStyle}>
-                    <button style={buttonStyle} id={"rotate" + stlid}>
-                        rotation
-                    </button>
-                    <button style={buttonStyle} id={"grid" + stlid}>
-                        grid
-                    </button>
-                </div> */}
                 <div id={"stlviewer" + stlid}></div>
             </div>
         </div>
